@@ -1,7 +1,7 @@
 -- CODE SECTION / PART: reusable functions ("library" functions)
 -------------------------------------------------------
 
-function sorted_hash() -- sorted_hash()
+--- function sorted_hash() -- sorted_hash()
 
 local sorted_hash_table_add_pair = function(hash_table, key_value_pair_to_add)
   local key, value
@@ -110,8 +110,10 @@ local prepare = function(input_pairs) -- prepare it (initialization)
   return prepared
 end -- prepare()
 
+--- return prepare
+
+--- end -- sorted_hash()
+
+--- return sorted_hash
+
 return prepare
-
-end -- sorted_hash()
-
-return sorted_hash

@@ -18,7 +18,7 @@ for index,pair in ipairs(input_pairs) do
   print(key, value)
 end
 
-local prepare_sorted_hash = require("sorted-hash")()
+local prepare_sorted_hash = require("sorted-hash")
 
 local hash_table = prepare_sorted_hash(input_pairs)
 
