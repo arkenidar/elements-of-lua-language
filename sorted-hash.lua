@@ -93,7 +93,7 @@ local prepare = function(input_pairs) -- prepare it (initialization)
   hash_table.remove = sorted_hash_table_remove_by_key
   hash_table.set = sorted_hash_table_set_pair
   hash_table.get = function(hash_table, key) return hash_table.pairs_hash[key] end
-  hash_table.access = setmetatable({}, {
+  hash_table = setmetatable(hash_table, {
     
     -- key-get
     __index=function (indexable_table, key)

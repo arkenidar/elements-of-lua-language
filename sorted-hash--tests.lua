@@ -63,8 +63,8 @@ print("got:", hash_table:get("sud"))
 
 -- access[] TESTs
 print("access[] TESTs:")
-hash_table.access["sud"] = "AXIS"
-hash_table.access["nord"] = hash_table.access["sud"]
+hash_table["sud"] = "AXIS"
+hash_table["nord"] = hash_table["sud"]
 sorted_iteration(hash_table)
 
 end -- tests()
