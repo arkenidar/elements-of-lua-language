@@ -104,8 +104,34 @@ local prepare = function(input_pairs) -- prepare it (initialization)
     __newindex = function (indexable_table, key, value)
       return hash_table:set({key,value})
     end,
+
+    -- pairs() iterator
+    __pairs = function(a)
     
-  }) -- hash_table.access
+    
+---function my_ipairs(a)
+
+function closure_iter(t)
+local i = 0 -- stateful iterator
+function iterate1(t)
+  i = i + 1
+  local v = t.sorted_keys[i]
+  local returned = t.pairs_hash[v]
+  return v,returned
+  --return next(t)
+end
+return iterate1
+end
+
+  ---return iterate1, a, 0
+  return closure_iter(a), a, 0
+end, -- my_ipairs(a)
+
+---return my_ipairs(a)
+
+    ----end,
+
+  }) -- hash_table meta-table
   
   return prepared
 end -- prepare()

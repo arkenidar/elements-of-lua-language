@@ -27,8 +27,31 @@ for key,value in pairs(hash_table.pairs_hash) do
   print(key,value)
 end
 
+function my_ipairs(a)
+
+function closure_iter(t)
+local i = 0 -- stateful iterator
+function iterate1(t)
+  i = i + 1
+  local v = t.sorted_keys[i]
+  local returned = t.pairs_hash[v]
+  return v,returned
+  --return next(t)
+end
+return iterate1
+end
+
+  ---return iterate1, a, 0
+  return closure_iter(a), a, 0
+end
+
 local sorted_iteration = function(hash_table)
-  for key, value in hash_table:iterate() do
+  ---for key, value in hash_table:iterate() do
+  ---for key, value in pairs(hash_table) do
+  ---for key, value in next1,hash_table do
+  ---for key, value in iterate1(hash_table) do
+  ---for key, value in my_ipairs(hash_table) do
+  for key, value in pairs(hash_table) do
     print(key, value)
   end
 end
